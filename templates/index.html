@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+             
+            background: linear-gradient(to right, #1804f0,#04DCF0);
+ 
+
+            /* color: #8E04F0; */
+        }
+
+        header {
+            /* background: linear-gradient(to right, #1804f0,#8E04F0); */
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            height: 150px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: none;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            border-color: #1e78cd;
+        }
+
+        button {
+            background: linear-gradient(to right, #4caf50, #45a049);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #45a049, #4caf50);
+        }
+
+        .summary {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 4px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background:#000000 ;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animated {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Text Summarizer</h1>
+    </header>
+
+    <section class="animated">
+        <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+        <button onclick="summarizeText()">Summarize</button>
+        <div class="summary" id="summaryResult"></div>
+    </section>
+
+    <footer>
+        &copy; 2024 Text Summarizer
+    </footer>
+
+    <script>
+        function summarizeText() {
+            // Add your text summarization logic here
+            // This could involve making a request to a server-side script using AJAX
+            // For simplicity, the example below just copies the input text to the result
+            var inputText = document.getElementById('inputText').value;
+            document.getElementById('summaryResult').innerText = inputText;
+        }
+    </script>
+</body>
+
+</html>
